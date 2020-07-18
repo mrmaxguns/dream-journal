@@ -61,6 +61,7 @@ This project is licensed under GNU General Public License v3.0, so we value open
 * [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com): database
 * [Markdown2](https://github.com/trentm/python-markdown2): markdown support
 * [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/): python WSGI server
+* [Bootstrap](https://getbootstrap.com/): CSS and JS framework
 
 # Creator
 Maxim R: [mrmaxguns](https://github.com/mrmaxguns)
