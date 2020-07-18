@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}Create a dream{% endblock %}
+
+{% block data %}
+
+<div class="large-area dream-bg" id="textContainer">
+  <div id="textContent" class="py-3">
+    <div class="container py-2 transparent-w rounded">
+
+      <!-- Are you sure modal -->
+      <!-- Modal -->
+      <div class="modal fade" id="areYouSureModal" tabindex="-1" aria-labelledby="areYouSureModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="areYouSureModalLabel">Are you sure you want to leave?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Leaving now will mean that your new dream will be discarded!
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Stay</button>
+              <a class="btn btn-danger" href="{{ url_for('index') }}" role="button">Leave</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="py-2">
+        <h1 class="display-2 t-main-font t-dark text-center">Create Dream</h1>
+        <div class="py-1">
+          <h1 class="t-dark-a">
+            <a class="no-u" href="javascript:void(0)" data-toggle="modal" data-target="#areYouSureModal">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path fill-rule="evenodd" d="M8.354 11.354a.5.5 0 0 0 0-.708L5.707 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z"/>
+                <path fill-rule="evenodd" d="M11.5 8a.5.5 0 0 0-.5-.5H6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5z"/>
+              </svg>
+            </a>
+          </h1>
+        </div>
+      </div>
+
+      {% if duplicate_title %}
+      <div class="py-2">
+        <div class="alert alert-warning" role="alert">
+          The title you chose is a duplicate. Make sure to choose a unique title
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="py-2">
+        <form method="post">
+          <div class="mb-3">
+            <label for="dreamTitle" class="form-label">The title of your dream</label>
+            <input type="text" class="form-control" id="dreamTitle" placeholder="Make it descriptive and unique..." value="{{ dream_prefill.title }}" maxlength=100 name=title required>
+          </div>
+          <div class="mb-3">
+            <label for="dreamContent" class="form-label">Write in detail about what happened in your dream. (Markdown is supported)</label>
+            <textarea class="form-control" id="dreamContent" name=content rows="8" required>{{ dream_prefill.content }}</textarea>
+          </div>
+          <div class="mb-3">
+            <label for="dreamTags" class="form-label">Some tags that you want to use to classify your dream. Separate tags with a comma.</label>
+            <input type="text" class="form-control" id="dreamTags" placeholder="Add tags so you can later find dreams with a certain tag..." value="{{ dream_prefill.tags }}" name=tags required>
+          </div>
+          <div class="mb-3">
+            <label for="dreamCharacters" class="form-label">The characters in your dream. Separate character names with a comma.</label>
+            <input type="text" class="form-control" id="dreamCharacters" placeholder="List as many characters as applicable..." value="{{ dream_prefill.characters }}" name=characters required>
+          </div>
+          <div class="mb-3">
+            <label for="dreamLocations" class="form-label">The locations in your dream. These can be places and times. Separate locations with a comma.</label>
+            <input type="text" class="form-control" id="dreamLocations" placeholder="List as many locations as applicable..." value="{{ dream_prefill.locations }}" name=locations required>
+          </div>
+          <div class="mb-3">
+            <label for="dreamType" class="form-label">The type of your dream. This is a word describing the type of dream such as regular, lucid, nightmare, etc.</label>
+            <input type="text" class="form-control" id="dreamType" placeholder="Try to use 1-2 words..." value="{{ dream_prefill.type }}" maxlength=200 name=type required>
+          </div>
+          <div class="mb-3">
+            <label for="dreamDate" class="form-label">The date your dream happened on.</label>
+            <input type="date" class="form-control" id="dreamDate" value="{{ dream_prefill.date }}" name=date required>
+          </div>
+          <div class="mb-3">
+            <input class="btn btn-outline-dark btn-lg btn-block" type="submit" value="Create Dream">
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

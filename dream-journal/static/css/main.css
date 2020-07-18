@@ -1,0 +1,104 @@
+/* Main css file :) */
+
+/*
+ * Fonts
+ */
+
+ /* Configure google fonts */
+ @font-face {
+     font-family: 'Josefin Sans';
+     font-style: normal;
+     font-weight: 400;
+     src: local('Cantarell Bold'), local('Cantarell-Bold'), url('../fonts/JosefinSans-Regular.ttf') format('truetype');
+ }
+
+/* Main text font */
+.t-main-font { font-family: 'Josefin Sans', sans-serif; }
+
+/*
+ * Color scheme
+ */
+
+/* Text colors */
+.t-light { color: #f6f2ef; }
+.t-light-a { color: #b7959d; }
+.t-main { color: #6ed6d6; }
+.t-dark { color: #7b5a71; }
+.t-dark-a { color: #2c53a3; }
+
+/* Background colors */
+.b-light { background-color: #f6f2ef; }
+.b-light-a { background-color: #b7959d; }
+.b-main { background-color: #6ed6d6; }
+.b-dark { background-color: #7b5a71; }
+.b-dark-a { background-color: #2c53a3; }
+
+/*
+ * Sizing
+ */
+
+/* Area at least the size of the screen height */
+.large-area {
+  min-height: 100%; /* For browsers with no support for vh */
+  min-height: 100vh; /* Overrides previous line if browser supports vh */
+}
+
+/*
+ * Link styling
+ */
+
+/* remove link underline */
+.no-u { text-decoration: none; } /* NO U a.k.a. no underline ;) */
+.no-u:hover { text-decoration: underline; }
+
+/*
+ * Backgrounds
+ */
+
+.dream-bg {
+  /* Location of the image */
+  background-image: url('/static/img/dream-colors.jpg');
+
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+
+  /* Background image is fixed in the viewport so that it doesn't move when
+    the content's height is greater than the image's height */
+  background-attachment: fixed;
+
+  /* This is what makes the background image rescale based
+    on the container's size */
+  background-size: cover;
+
+  /* Set a background color that will be displayed
+    while the background image is loading */
+  background-color: #6ed6d6;
+}
+
+/* Semi-transparent white background */
+.transparent-w {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+/*
+ * Styling for content
+ */
+
+.main-dream-content h1,
+.main-dream-content h2,
+.main-dream-content h3,
+.main-dream-content h4,
+.main-dream-content h5,
+.main-dream-content h6 {
+  color: #2c53a3;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.main-dream-content p {
+  color: #7b5a71;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.1em;
+}

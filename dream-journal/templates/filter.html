@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Filter dreams{% endblock %}
+
+{% block data %}
+
+<div class="large-area b-main" id="textContainer">
+  <div id="textContent">
+    <div class="container py-5">
+      <div id="lightTextDefault" class="t-light">
+
+        <div class="py-2">
+          <h1 class="display-4 t-main-font">Filter My Dream Journal</h1>
+          <div class="py-2">
+            <h2>
+              <a class="no-u" href="{{ url_for('index') }}">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                  <path fill-rule="evenodd" d="M8.354 11.354a.5.5 0 0 0 0-.708L5.707 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z"/>
+                  <path fill-rule="evenodd" d="M11.5 8a.5.5 0 0 0-.5-.5H6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5z"/>
+                </svg>
+              </a>
+            </h2>
+          </div>
+        </div>
+
+        <div class="py-2">
+          <form method="get">
+            <div class="mb-3">
+              <input type="text" class="form-control" id="searchQuery" placeholder="Type in your filter query here..." name=q required>
+            </div>
+            <div class="mb-3">
+              <select class="form-select" aria-label="Select a filter type" name=by>
+                <option selected>Select the thing you want to filter</option>
+                <option value="tag">Tag</option>
+                <option value="char">Character</option>
+                <option value="loc">Location</option>
+                <option value="type">Dream type</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <button type="submit" class="btn btn-primary btn-block">Filter</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="py-2">
+          {% if error %}
+          <div class="py-2">
+            <div class="alert alert-warning" role="alert">
+              The filter query you entered is invalid. Make sure you have written
+              a query and chosen a valid filter option.
+            </div>
+          </div>
+          {% endif %}
+          {% if not results %}
+          <h2 class="main-font">Your filter didn't match any entries.</h2>
+          {% else %}
+          <ul class="list-group list-group-flush rounded">
+            {% for result in results %}
+            <li class="list-group-item p-3">
+              <h3 class="t-main-font"><a class="no-u t-dark" href="{{ url_for('dream_page', dream_id=result.id) }}">{{ result.title }}</a>}</h3>
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

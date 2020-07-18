@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block data %}
+
+<div class="large-area b-main" id="textContainer">
+  <div id="textContent">
+    <div class="container py-5">
+      <div id="lightTextDefault" class="t-light">
+
+        <div class="py-2">
+          <h1 class="display-4 t-main-font">404 - Not Found</h1>
+          <h2 class="t-main-font my-3">The page you requested was not found. How
+          about I redirect you to the <a href="{{ url_for('index') }}">home page</a></h2>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
