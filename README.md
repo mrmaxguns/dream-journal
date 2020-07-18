@@ -62,9 +62,17 @@ This project is licensed under GNU General Public License v3.0, so we value open
 * [Markdown2](https://github.com/trentm/python-markdown2): markdown support
 * [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/): python WSGI server
 * [Bootstrap](https://getbootstrap.com/): CSS and JS framework
+* [Black](https://black.readthedocs.io/en/stable/): Python linting
+* [Isort](https://timothycrosley.github.io/isort/): Import sorting
 
 # Creator
 Maxim R: [mrmaxguns](https://github.com/mrmaxguns)
 
 # Contribute
-Contributions are welcome! This project is small, so we don't have set contribution guidelines. Install, update and open a PR.
+Contributions are welcome! This project is small, so we don't have many set contribution guidelines. Install, update and open a PR, but make sure to do the following first:
+* Use black to format code: `black .`
+  * Installed with requirements
+* Use isort to format imports: `isort .`
+  * Installed with requirements
+* Use the latest version of python (3.8)
+* Write readable code that requires minimal comments to explain
