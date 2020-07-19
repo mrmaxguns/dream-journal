@@ -1,6 +1,8 @@
 ---
-layout: page
+layout: doc_file
 title: Quickstart
+previousdoc: docs/
+
 ---
 
 ## Prerequisites
