@@ -1,1 +1,11 @@
+
+# Build settings
+markdown: kramdown
 remote_theme: fongandrew/hydeout
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-remote-theme
+  - github-pages
+  
+sidebar_home_link: true
