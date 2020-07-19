@@ -227,28 +227,28 @@ def filter_by():
             if query in parse_tags(dream.tags, mode="dec"):
                 results.append(dream)
 
-        return render_template("filter.html", results=results)
+        return render_template("filter.html", results=results, query=[filter_by, query])
     elif filter_by == "char":
         results = []
         for dream in Dream.query.all():
             if query in parse_tags(dream.characters, mode="dec"):
                 results.append(dream)
 
-        return render_template("filter.html", results=results)
+        return render_template("filter.html", results=results, query=[filter_by, query])
     elif filter_by == "loc":
         results = []
         for dream in Dream.query.all():
-            if query in parse_tags(dream.locations, mode="dec"):
+            if query in parse_tags(dream.locations, mode="dec", query=[filter_by, query]):
                 results.append(dream)
 
-        return render_template("filter.html", results=results)
+        return render_template("filter.html", results=results, query=[filter_by, query])
     elif filter_by == "type":
         results = []
         for dream in Dream.query.all():
             if query in parse_tags(dream.type, mode="dec"):
                 results.append(dream)
 
-        return render_template("filter.html", results=results)
+        return render_template("filter.html", results=results, query=[filter_by, query])
     else:
         return render_template("filter.html", results=[], error=True)
 

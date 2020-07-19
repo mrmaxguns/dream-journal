@@ -27,15 +27,15 @@
         <div class="py-2">
           <form method="get">
             <div class="mb-3">
-              <input type="text" class="form-control" id="searchQuery" placeholder="Type in your filter query here..." name=q required>
+              <input type="text" class="form-control" id="searchQuery" placeholder="Type in your filter query here..." name=q {% if query %}value="{{ query[1] }}"{% endif %} required>
             </div>
             <div class="mb-3">
               <select class="form-select" aria-label="Select a filter type" name=by>
-                <option selected>Select the thing you want to filter</option>
-                <option value="tag">Tag</option>
-                <option value="char">Character</option>
-                <option value="loc">Location</option>
-                <option value="type">Dream type</option>
+                <option {% if not query %}selected{% endif %}>Select the thing you want to filter</option>
+                <option {% if query %}{% if query[0] == 'tag' %}selected{% endif %}{% endif %} value="tag">Tag</option>
+                <option {% if query %}{% if query[0] == 'char' %}selected{% endif %}{% endif %} value="char">Character</option>
+                <option {% if query %}{% if query[0] == 'loc' %}selected{% endif %}{% endif %} value="loc">Location</option>
+                <option {% if query %}{% if query[0] == 'type' %}selected{% endif %}{% endif %} value="type">Dream type</option>
               </select>
             </div>
             <div class="mb-3">
