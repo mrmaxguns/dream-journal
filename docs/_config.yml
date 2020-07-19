@@ -14,4 +14,6 @@ sidebar_home_link: true
 collections:
   docs:
     output: true
+    
+gh_url_prefix: dream-journal
 
