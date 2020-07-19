@@ -12,4 +12,5 @@ Dream Journal is a simple dream journal application built with the python [flask
 A dream journal is just waht it sounds like: a journal that records your dreams. A dream journal can help you understand your dreams, but many people write in it because it calms them or otherwise find it an interesting thing to do. This dream journal applicaiton can be installed locally, so you can run it offline, whenever you want to. The benefits of this dream journal application is that it is simple, but allows you to filter, organize and search dreams.
 
 ## Quick Links
+* [Quickstart](docs/1-quickstart.html)
 
