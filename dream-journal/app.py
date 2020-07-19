@@ -56,7 +56,7 @@ def get_raw_data_by_id(id):
 
 def filter_query(query):
     query = query.strip()
-    filtered_query = re.sub("\?|\.|!", "", query)
+    filtered_query = re.sub("""\?|\.|!|\(|\)|"|'|#""", "", query)
     lowercase_query = query.lower()
     return lowercase_query
 
