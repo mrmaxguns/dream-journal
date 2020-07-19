@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Documentation
-permalink: /docs/
+permalink: /documentation/
 sidebar_link: true
 ---
 
