@@ -9,7 +9,7 @@ Welcome to the documentation here you will find information about the applicatio
 
 ## Table of Contents
 {% for doc in site.docs %}
-* [{{ doc.title }}]({{ doc.url }})
+* [{{ doc.title }}](/{{ site.gh_url_prefix }}/{{ doc.url }})
 {% endfor %}
 
 If you have a question or issue not addressed in the documentation, please feel free to open up [an issue](https://github.com/mrmaxguns/dream-journal/issues/new?body=Type+your+issue+here) or pull request (if you know how to fix a bug)
