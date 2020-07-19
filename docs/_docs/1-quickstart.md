@@ -2,6 +2,7 @@
 layout: doc_file
 title: Quickstart
 previousdoc: docs/
+nextdoc: docs/2-thehomepage.html
 
 ---
 
