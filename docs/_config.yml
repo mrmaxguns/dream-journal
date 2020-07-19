@@ -9,3 +9,9 @@ plugins:
   - github-pages
   
 sidebar_home_link: true
+
+# docs collection
+collections:
+  docs:
+    output: true
+
