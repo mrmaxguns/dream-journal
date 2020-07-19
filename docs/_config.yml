@@ -1,1 +1,4 @@
 theme: jekyll-theme-architect
+header_pages:
+  - about.md
+  - portfolio.md
