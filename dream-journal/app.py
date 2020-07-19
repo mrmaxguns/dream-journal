@@ -238,7 +238,7 @@ def filter_by():
     elif filter_by == "loc":
         results = []
         for dream in Dream.query.all():
-            if query in parse_tags(dream.locations, mode="dec", query=[filter_by, query]):
+            if query in parse_tags(dream.locations, mode="dec"):
                 results.append(dream)
 
         return render_template("filter.html", results=results, query=[filter_by, query])

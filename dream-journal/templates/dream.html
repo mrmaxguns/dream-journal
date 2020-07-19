@@ -40,17 +40,17 @@
         <h3><em>Characters</em></h3>
         <ul>
         {% for character in dream_data.characters %}
-          <li>{{ character }}</li>
+          <li><a href="{{ url_for('filter_by', by='char', q=character) }}">{{ character }}</a></li>
         {% endfor %}
         </ul>
         <h3><em>Locations</em></h3>
         <ul>
         {% for location in dream_data.locations %}
-          <li>{{ location }}</li>
+          <li><a href="{{ url_for('filter_by', by='loc', q=location) }}">{{ location }}</a></li>
         {% endfor %}
         </ul>
         <h3><em>Dream Type</em></h3>
-        <p>{{ dream_data.type }}</p>
+        <p><a href="{{ url_for('filter_by', by='type', q=dream_data.type) }}">{{ dream_data.type }}</a></p>
         <h3><em>Date of dream</em></h3>
         <p>{{ dream_data.date }}</p>
       </div>
