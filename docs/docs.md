@@ -1,8 +1,10 @@
 ---
-layout: page
+layout: doc_file
 title: Documentation
 permalink: /docs/
 sidebar_link: true
+nextdoc: docs/1-quickstart.html
+
 ---
 
 Welcome to the documentation here you will find information about the application and its use. All pages of the documentation are listed below.
