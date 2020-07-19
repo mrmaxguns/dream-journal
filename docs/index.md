@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Home
+title: A simple application to show the power of flask
+
 ---
 
-# A simple application to show the power of flask
