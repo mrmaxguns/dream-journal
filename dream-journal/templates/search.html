@@ -43,7 +43,7 @@
           <ul class="list-group list-group-flush rounded">
             {% for result in results %}
             <li class="list-group-item p-3">
-              <h3 class="t-main-font"><a class="no-u t-dark" href="{{ url_for('dream_page', dream_id=result[0]) }}">{{ result_data[result[0]].title }}</a>}</h3>
+              <h3 class="t-main-font"><a class="no-u t-dark" href="{{ url_for('dream_page', dream_id=result[0]) }}">{{ result_data[result[0]].title }}</a></h3>
               <div class="preview">
                 <a class="no-u t-dark" href="{{ url_for('dream_page', dream_id=result[0]) }}"><p>{{ result_data[result[0]].excerpt }}...</p></a>-->
               </div>
