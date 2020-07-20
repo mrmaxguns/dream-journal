@@ -16,7 +16,7 @@ To get to the filter feature:
 
 The filter page has a query bar (where you type what you want to filter for) and a selection bar (where you type what you want to filter by).
 
-![The right home menu containing the filter link](/{{ site.gh_url_prefix }}/assets/docs/7-search/filter.png)
+![The right home menu containing the filter link](/{{ site.gh_url_prefix }}/assets/docs/7-filter/filter.png)
 
 * First type in what you want to filter for. Make sure it is exactly spelled. The filter is **not** case-sensitive.
 * Then, choose a dropdown option for what you want to filter by:
