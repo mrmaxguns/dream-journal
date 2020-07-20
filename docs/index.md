@@ -15,4 +15,8 @@ A dream journal is just waht it sounds like: a journal that records your dreams.
 * [Quickstart](docs/1-quickstart.html)
 * [Documentation](docs)
 * [Contribute](contribute)
+* [GitHub Repository](https://github.com/mrmaxguns/dream-journal)
+
+## Repository
+This website explains the code found in [https://github.com/mrmaxguns/dream-journal](https://github.com/mrmaxguns/dream-journal)
 
