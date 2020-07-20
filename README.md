@@ -53,7 +53,7 @@ Installing the app is easy:
 * Type your filter query: when typing the query, it must be exactly worded but case doesn't matter. Select the type of item you want to filter in the menu below and press "Filter".
 
 # License
-This project is licensed under GNU General Public License v3.0, so we value open-source contributions. Please see the LICENSE file for more details.
+This project is licensed under the MIT license, so we value open-source contributions. Please see the LICENSE file for more details.
 
 # Built with
 * [Python 3](https://python.org): programming language
