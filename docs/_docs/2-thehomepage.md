@@ -2,6 +2,7 @@
 layout: doc_file
 title: The Homepage
 previousdoc: docs/1-quickstart.html
+nextdoc: docs/3-createadream.html
 
 ---
 
