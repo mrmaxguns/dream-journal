@@ -3,6 +3,7 @@ layout: doc_file
 title: Quickstart
 previousdoc: docs/
 nextdoc: docs/2-thehomepage.html
+sidebar_link: true
 
 ---
 
