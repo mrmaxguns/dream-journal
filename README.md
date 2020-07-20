@@ -1,4 +1,4 @@
-![An image showing the basic layout of the dream journal](docs/assets/img/home.gif)
+[![An image showing the basic layout of the dream journal](docs/assets/img/home.gif)](https://mrmaxguns.github.io/dream-journal/)
 <h1 align=center>Dream Journal</h1>
 
 <p align=center>A simple, smart dream journal app built with python flask.</p>
