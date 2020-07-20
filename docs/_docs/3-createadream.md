@@ -2,6 +2,7 @@
 layout: doc_file
 title: Create a dream
 previousdoc: docs/2-thehomepage.html
+nextdoc: docs/4-dreampage.md
 
 ---
 
