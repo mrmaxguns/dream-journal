@@ -20,7 +20,7 @@ In the previous article we learned how to view dreams and the different options 
 3. Click on the pencil icon.
 4. An edit menu will show. Make any changes needed.
 5. Click update once you are done with the edits.
-6. The dreamis now edited and updated.
+6. The dream is now edited and updated.
 
 The editor:
 ![the dream editor](/{{ site.gh_url_prefix }}/assets/docs/5-editanddelete/edit-dream.png)
