@@ -1,10 +1,10 @@
 ---
 layout: page
-title: A simple application to show the power of flask
+title: A simple, smart dream journal app built with python flask
 
 ---
 
-![A picture of the dream journal app](assets/img/home.png)
+![A picture of the dream journal app](assets/img/home.gif)
 
 Dream Journal is a simple dream journal application built with the python [flask](https://flask.palletsprojects.com/) package. It runs on a simple database with the help of [flask sqlalchemy](https://flask-sqlalchemy.palletsprojects.com). Dream Journal is ready to go and can be easily installed and developed on. The journal app is open source and may be modied under the GNU GPL v3 license.
 
