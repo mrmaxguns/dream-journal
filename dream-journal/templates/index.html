@@ -13,6 +13,12 @@
           <h1 class="display-4 t-main-font">My Dream Journal</h1>
         </div>
 
+        <div class="py-1">
+          {% with pagination=pagination %}
+            {% include "includes/pagination.html" %}
+          {% endwith %}
+        </div>
+
         <div id="contentFrame" class="py-3 px-1">
           <div class="row">
 

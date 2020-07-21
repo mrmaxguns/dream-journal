@@ -3,7 +3,7 @@ import re
 from collections import OrderedDict
 
 import markdown2
-from flask import Flask, redirect, render_template, request, url_for
+from flask import Flask, redirect, render_template, request, url_for, abort
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -14,6 +14,7 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
 
+# dream stores all dream data
 class Dream(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     pub_date = db.Column(db.DateTime, default=datetime.datetime.utcnow)
@@ -30,16 +31,19 @@ class Dream(db.Model):
         return "<Dream %r>" % self.title
 
 
+# initialize database
 def create_db():
     db.create_all()
 
 
+# parse comma-separated tags
 def parse_tags(data, mode="enc"):
     if mode == "enc":
         return ",".join(data)
     return [i.lower().strip() for i in data.split(",")]
 
 
+# get dream data based on the id supplied
 def get_raw_data_by_id(id):
     dream = Dream.query.filter_by(id=id).first_or_404()
     return {
@@ -54,6 +58,7 @@ def get_raw_data_by_id(id):
     }
 
 
+# filter queries (remove unnecessary characters)
 def filter_query(query):
     query = query.strip()
     filtered_query = re.sub("""\?|\.|!|\(|\)|"|'|#""", "", query)
@@ -63,6 +68,18 @@ def filter_query(query):
 
 @app.route("/")
 def index():
+    # amount of dreams  per tab
+    ITEMS_PER_TAB = 20
+
+    tab = request.args.get("tab")
+    if tab is None:
+        page = 1
+    else:
+        page = int(tab)
+
+    # get indicies of dreams found in the tab
+    dream_indicies = ((page - 1) * ITEMS_PER_TAB, page * ITEMS_PER_TAB - 1)
+
     dreams = Dream.query.order_by(Dream.dream_date).all()
     dreams.reverse()
     dream_data = OrderedDict()
@@ -75,7 +92,43 @@ def index():
             "excerpt": dream.content[:100],
         }
 
-    return render_template("index.html", dreams=dream_data)
+    dream_items = list(dream_data.items())
+
+    # get all dreams based on the indicies supplied
+    tab_dreams = dream_items[dream_indicies[0] : dream_indicies[1] + 1]
+
+    if len(tab_dreams) == 0 and tab != 1:
+        # tab out of range
+        return abort(404)
+
+    #
+    # Pagination information
+    #
+
+    tab_data = divmod(len(dream_data), ITEMS_PER_TAB)
+    if tab_data[1] == 0:
+        amount_of_tabs = tab_data[0]
+    else:
+        amount_of_tabs = tab_data[0] + 1
+
+    if amount_of_tabs <= 5:
+        pagination_type = 'sm'
+    elif page <= 3:
+        pagination_type = 'lg-l'
+    elif page >= amount_of_tabs - 2:
+        pagination_type = 'lg-r'
+    else:
+        pagination_type = 'lg'
+
+    pagination = {
+        "type": pagination_type,
+        "current": page,
+        "prev_enabled": page != 1,
+        "next_enabled": page != amount_of_tabs,
+        "tab_amount": amount_of_tabs
+    }
+
+    return render_template("index.html", dreams=OrderedDict(tab_dreams), pagination=pagination)
 
 
 @app.route("/dreams/<dream_id>")
