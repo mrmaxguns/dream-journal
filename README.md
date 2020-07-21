@@ -2,6 +2,7 @@
 <h1 align=center>Dream Journal</h1>
 
 <p align=center>A simple, smart dream journal app built with python flask.</p>
+<p align=center><a href="https://mrmaxguns.github.io/dream-journal">Learn More</a></p>
 
 ## Installation
 
@@ -69,10 +70,4 @@ This project is licensed under the MIT license, so we value open-source contribu
 Maxim R: [mrmaxguns](https://github.com/mrmaxguns)
 
 # Contribute
-Contributions are welcome! This project is small, so we don't have many set contribution guidelines. Install, update and open a PR, but make sure to do the following first:
-* Use black to format code: `black .`
-  * Installed with requirements
-* Use isort to format imports: `isort .`
-  * Installed with requirements
-* Use the latest version of python (3.8)
-* Write readable code that requires minimal comments to explain
+Contributions are welcome! To learn how to contribute, visit [our official contribution page](https://mrmaxguns.github.io/dream-journal/contribute/)
