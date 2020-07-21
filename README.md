@@ -2,7 +2,7 @@
 <h1 align=center>Dream Journal</h1>
 
 <p align=center>A simple, smart dream journal app built with python flask.</p>
-<p align=center><a href="https://mrmaxguns.github.io/dream-journal">Learn More</a></p>
+<p align=center>[Install](#installation) | [Docs](https://mrmaxguns.github.io/dream-journal/docs) | [Contribute](https://mrmaxguns.github.io/dream-journal/contribute)</p>
 
 ## Installation
 
