@@ -31,7 +31,7 @@ You will need to install this app through the terminal. Start out by heading to 
   ```bash
   pip install -r requirements.txt
   ```
-* You are now set to run the applicaiton. On first run, the database will be created. Type the following command, and a browser window with the dream-journal should open:
+* You are now set to run the application. On first run, the database will be created. Type the following command, and a browser window with the dream-journal should open:
   ```bash
   python dream-journal/run.py
   ```
