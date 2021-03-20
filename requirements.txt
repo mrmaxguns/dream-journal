@@ -6,7 +6,7 @@ Flask==1.1.2
 Flask-SQLAlchemy==2.4.4
 isort==5.1.2
 itsdangerous==1.1.0
-Jinja2==2.11.2
+Jinja2==2.11.3
 markdown2==2.3.9
 MarkupSafe==1.1.1
 pathspec==0.8.0
