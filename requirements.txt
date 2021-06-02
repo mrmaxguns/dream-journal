@@ -7,7 +7,7 @@ Flask-SQLAlchemy==2.4.4
 isort==5.1.2
 itsdangerous==1.1.0
 Jinja2==2.11.3
-markdown2==2.3.9
+markdown2==2.4.0
 MarkupSafe==1.1.1
 pathspec==0.8.0
 regex==2020.7.14
