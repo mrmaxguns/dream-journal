@@ -2,7 +2,7 @@ appdirs==1.4.4
 attrs==19.3.0
 black==19.10b0
 click==7.1.2
-Flask==1.1.2
+Flask==2.3.2
 Flask-SQLAlchemy==2.4.4
 isort==5.1.2
 itsdangerous==1.1.0
